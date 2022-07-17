@@ -1,0 +1,97 @@
+import java.util.ArrayList;
+import java.util.Date;
+
+public class Solution{
+
+		/**
+	     * 失物排序方法
+	     * @param lostArray 待排序的失物数组 
+	     */
+	    public void sortLost(Lost[] lostArray){
+	       for(int i = 0; i < lostArray.length - 1; i++) {
+	    	   for(int j = i + 1; i < lostArray.length; j++) {
+	    		   if(lostArray[i].getLostDate().getTime() > lostArray[j].getLostDate().getTime()) {
+	    			   Lost temp = lostArray[i];
+	    			   lostArray[i] = lostArray[j];
+	    			   lostArray[j] = temp;
+	    		   }
+	    	   }
+	       }
+	    }
+	    
+	    /**
+	     * 按关键字搜索失物的方法，这里假设按照失物的领取地点进行搜索
+	     * @param lostArray 失物数组 
+	     * @param keyword 用户输入的关键字
+	     * @return 返回查找到的失物
+	     */
+	    public Lost[] selectByKeyword(Lost[] lostArray,String keyword){
+	    	ArrayList<Lost> losts = new ArrayList<Lost>();
+	        for(Lost lost : lostArray) {
+	        	if(lost.getPlace().contains(keyword)) {
+	        		losts.add(lost);
+	        	}
+	        }
+	        Lost[] res = null;
+	        losts.toArray(res);
+	        return res;
+	    }
+	    
+	    
+}
+
+class Lost {
+	private String name;
+	private String place;
+	private Date lostDate;
+	
+	public Lost(String name, Date lostDate, String place) {
+		super();
+		this.name = name;
+		this.place = place;
+		this.lostDate = lostDate;
+	}
+	
+	public String getPlace() {
+		return place;
+	}
+
+	public void setPlace(String place) {
+		this.place = place;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Date getLostDate() {
+		return lostDate;
+	}
+
+	public void setLostDate(Date lostDate) {
+		this.lostDate = lostDate;
+	}
+
+	
+	
+}
+
+class CardLost extends Lost{
+
+	public CardLost(String name, String place, Date lostDate) {
+		super(name, lostDate, place);
+	}
+	
+}
+
+class BookLost extends Lost{
+
+	public BookLost(String name, String place, Date lostDate) {
+		super(name, lostDate, place);
+	}
+	
+}

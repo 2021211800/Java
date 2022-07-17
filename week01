@@ -36,8 +36,7 @@ public class Solution{
 	        losts.toArray(res);
 	        return res;
 	    }
-	    
-	    
+	        
 }
 
 class Lost {
@@ -75,8 +74,6 @@ class Lost {
 	public void setLostDate(Date lostDate) {
 		this.lostDate = lostDate;
 	}
-
-	
 	
 }
 

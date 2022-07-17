@@ -10,7 +10,7 @@ public class Solution{
 	    public void sortLost(Lost[] lostArray){
 	       for(int i = 0; i < lostArray.length - 1; i++) {
 	    	   for(int j = i + 1; i < lostArray.length; j++) {
-	    		   if(lostArray[i].getLostDate().getTime() > lostArray[j].getLostDate().getTime()) {
+	    		   if(lostArray[j].getLostDate().getTime() > lostArray[i].getLostDate().getTime()) {
 	    			   Lost temp = lostArray[i];
 	    			   lostArray[i] = lostArray[j];
 	    			   lostArray[j] = temp;

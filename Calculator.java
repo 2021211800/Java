@@ -1,7 +1,4 @@
-package 蓝山02;
-
 import java.util.Stack;
-
 import org.junit.Test;
 
 public class Calculator {

@@ -1,6 +1,3 @@
-package 蓝山02;
-
-import org.junit.Test;
 
 public class LinkedList<T> {
 	
@@ -121,11 +118,6 @@ public class LinkedList<T> {
 		}catch(Exception e) {
 			System.out.println(e.getMessage());
 		}
-	}
-	
-	@Test
-	public void test() {
-		
 	}
 }
 
